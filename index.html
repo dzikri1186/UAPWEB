@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kalkulator Harga Barang</title>
+  </head>
+  <body>
+    <script>
+      // Daftar barang beserta harganya
+      const daftarBarang = {
+        '001': { nama: 'Barang A', harga: 10000 },
+        '002': { nama: 'Barang B', harga: 20000 },
+        '003': { nama: 'Barang C', harga: 30000 },
+      };
+
+      // Fungsi untuk menghitung total harga
+      function hitungTotal() {
+        const kodeBarang = document.getElementById('kodeBarang').value;
+        const jumlah = parseInt(document.getElementById('jumlah').value);
+
+        if (daftarBarang[kodeBarang]) {
+          const hargaSatuan = daftarBarang[kodeBarang].harga;
+          const total = hargaSatuan * jumlah;
+
+          window.alert(Total pembayaran adalah: ${total});
+        } else {
+          window.alert('Kode barang tidak valid');
+        }
+      }
+    </script>
+
+    <h2>Kalkulator Harga Barang</h2>
+    <label for="kodeBarang">Masukkan kode barang:</label>
+    <input type="text" id="kodeBarang" placeholder="Contoh: 001" /><br /><br />
+
+    <label for="jumlah">Banyaknya Barang:</label>
+    <input type="number" id="jumlah" placeholder="Contoh: 5" /><br /><br />
+
+    <button onclick="hitungTotal()">Submit</button>
+     
+  </body>
+</html>
